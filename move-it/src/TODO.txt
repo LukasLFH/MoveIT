@@ -1,0 +1,9 @@
+- Wenn View zu groß wird die Font-Size zu klein
+- 1.1, 1.1.1 & 1.1.2 als HTML fertigstellen
+- Anfangen mit JS Logik
+    - Button clicken führt zur passenden seite
+    - Zurück button programieren
+    - Eingabefelder brauchen restriktionen
+
+- Regeln müssen eingefüfgt werden
+- Optionen werden als letztes bearbeitet (im CSS ausgrauen?)
