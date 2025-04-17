@@ -1,0 +1,17 @@
+.InputForm {
+    input {
+        width: 40vw;
+        height: 30px;
+        font-size: 14pt;
+    }
+
+    [type=submit] {
+        width: 30vw;
+    }
+
+    select {
+        text-align: center;
+        font-size: 14pt;
+        width: 20vw;
+    }
+}

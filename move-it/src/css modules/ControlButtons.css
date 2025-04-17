@@ -1,0 +1,23 @@
+.ControlButtons {
+    /* Die Buttons werden von oben nach unten angeordnet */
+    display: flex;
+    flex-direction: column;
+
+    /* Das div hat die Höhe des Gerätes & Platz zu den Rändern (vh: variable height; vw: variable width)*/
+    height: 100vh;
+    margin: 20vh 20vw 20vw;
+
+    /* Die Buttons füllen den gesammten div 
+       Alle Buttons: gewisse Größe durch padding & Abstand zum nächsten Button */
+    .StartseiteButton {
+        width: 100%;
+        padding: 5%;
+        margin-bottom: 10%;
+    }
+
+    .MultiplayerButton {
+        width: 100%;
+        padding: 7.5%;
+        margin-bottom: 12.5%;
+    }
+}

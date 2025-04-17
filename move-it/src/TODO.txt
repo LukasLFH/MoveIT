@@ -1,0 +1,23 @@
+- 1.1.2 als HTML fertigstellen
+    - Für das HTML: 
+        https://www.w3schools.com/tags/tag_input.asp
+    - neues CSS für input felder und Submit Buttons
+
+- Zurück Buttons müssen noch erstellt werden
+
+
+- Anfangen mit JS Logik
+    - Button clicken führt zur passenden seite
+    - Zurück button programieren
+    - Eingabefelder brauchen restriktionen
+    - Input form muss zur lobby führen
+        - PW & Username können aus URL gelesen werden
+
+- Regeln müssen eingefügt werden
+- Optionen werden als letztes bearbeitet (im CSS ausgrauen?)
+
+
+
+Generelle Probleme:
+- Wenn View zu groß wird die Font-Size zu klein
+- !!!!!!!!!!Titelbild: passende pixelanzahl wird benötigt!!!!!!!

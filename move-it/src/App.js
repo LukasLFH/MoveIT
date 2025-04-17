@@ -1,23 +1,18 @@
-import logo from './media/logo.svg';
 import './css modules/App.css';
+// import Titelbild from "./media/AufAchseTitlescreen.png"
+// import Startseite from './js html modules/Startseite.js';
+// import MultiplayerSelect from './js html modules/MultiplayerSelect';
+// import SpielBeitreten from './js html modules/SpielBeitreten.js';
+import SpielErstellen from './js html modules/SpielErstellen';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <img src={Titelbild} alt="Titelbild" className="Titelbild"></img> */}
+      {/* <Startseite></Startseite> */}
+      {/* <MultiplayerSelect></MultiplayerSelect> */}
+      {/* <SpielBeitreten></SpielBeitreten> */}
+      <SpielErstellen></SpielErstellen>
     </div>
   );
 }
