@@ -10,6 +10,8 @@
     - Button clicken führt zur passenden seite
     - Zurück button programieren
     - Eingabefelder brauchen restriktionen
+    - Input form muss zur lobby führen
+        - PW & Username können aus URL gelesen werden
 
 - Regeln müssen eingefügt werden
 - Optionen werden als letztes bearbeitet (im CSS ausgrauen?)
