@@ -3,6 +3,7 @@ import "../css modules/InputFelder.css"
 function SpielBeitreten() {
     return (
         <div className="InputForm">
+            <button className="ZurueckButton">Zurück</button>
             <form action="/LINK ZUR LOBBY">
                 {/* Username eingeben */}
                 <label for="Username">Username:</label> 

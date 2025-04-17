@@ -20,4 +20,11 @@
         padding: 7.5%;
         margin-bottom: 12.5%;
     }
+
+    .ZurueckButton{
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        padding: 1.25% 5% 1.25% 5%;
+    }
 }
