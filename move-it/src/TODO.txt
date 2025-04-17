@@ -1,4 +1,4 @@
-- 1.1.1 & 1.1.2 als HTML fertigstellen
+- 1.1.2 als HTML fertigstellen
     - Für das HTML: 
         https://www.w3schools.com/tags/tag_input.asp
     - neues CSS für input felder und Submit Buttons

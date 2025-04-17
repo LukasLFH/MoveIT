@@ -1,0 +1,9 @@
+input {
+    width: 40vw;
+    height: 30px;
+    font-size: 14pt;
+}
+
+input[type=submit]{
+    width: 30vw;
+}

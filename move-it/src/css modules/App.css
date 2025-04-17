@@ -1,6 +1,8 @@
 /* Bei den auskommentierten Zeilen handelt es sich um Sachen für das Titelbild */
 
 body {
+  font-size: 14pt;
+
   /* Startpage sollte genau eine Seite einnehmen, nicht mehr */
   overflow: hidden;
   /* margin: 0;

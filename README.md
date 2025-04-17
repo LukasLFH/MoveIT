@@ -4,7 +4,7 @@
 
 Zum Entwickel wird npm oder ein vergleichbares Tool benötigt (z.B. yarn). 
 
-Spezifische Comands innerhalb des Projektes können in der README Datei im Unterordner move-it
+Spezifische Comands innerhalb des Projektes können in der README Datei im Unterordner move-it gefunden werden
 
 
 ## Naming Convention
