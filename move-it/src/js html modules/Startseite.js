@@ -7,23 +7,27 @@ function Startseite() {
         <div id="Startseite" className="ControlButtons Seite" style={{ display: "block" }}>
 
             <button
-                id="SpielenButton"
+                NextPageId="MultiplayerSelect"
                 className="StartseiteButton"
                 onClick={SchrittNachVorne}>
                 Spielen
             </button>
 
             <button
-                id="OptionenButton"
+                NextPageId="Optionen"
                 className="StartseiteButton"
-                onClick={SchrittNachVorne}>
+                onClick={SchrittNachVorne}
+                disabled>
+                    {/* Muss später noch eingefügt werden */}
                 Optionen
             </button>
 
             <button
-                id="RegelnButton"
+                NextPageId="Regeln"
                 className="StartseiteButton"
-                onClick={SchrittNachVorne}>
+                onClick={SchrittNachVorne}
+                disabled>
+                    {/* Warten bis Regeln als Text da sind und dann muss Seite dafür erstellt werden */}
                 Regeln
             </button>
 

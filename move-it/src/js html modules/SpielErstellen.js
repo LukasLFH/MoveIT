@@ -1,9 +1,17 @@
 import "../css modules/InputFelder.css"
+import SchrittZurueck from "../logic modules/SchrittZurueck";
 
 function SpielErstellen() {
     return (
         <div id="SpielErstellen" className="InputForm Seite" style={{ display: "none" }}>
-            <button className="ZurueckButton">Zurück</button>
+
+            <button
+                PrevPageId="MultiplayerSelect"
+                className="ZurueckButton"
+                onClick={SchrittZurueck}>
+                Zurück
+            </button>
+
             <form action="/LINK ZUR LOBBY">
 
                 {/* Username eingeben */}
@@ -27,7 +35,7 @@ function SpielErstellen() {
                 </select>
                 <br></br>
                 <br></br>
-                
+
                 {/* Lobby erstellen */}
                 <input type="submit" value="Spiel erstellen"></input>
             </form>

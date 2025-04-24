@@ -1,9 +1,17 @@
 import "../css modules/InputFelder.css"
+import SchrittZurueck from "../logic modules/SchrittZurueck";
 
 function SpielBeitreten() {
     return (
         <div id="SpielBeitreten" className="InputForm Seite" style={{ display: "none" }}>
-            <button className="ZurueckButton">Zurück</button>
+
+            <button
+                PrevPageId="MultiplayerSelect"
+                className="ZurueckButton"
+                onClick={SchrittZurueck}>
+                Zurück
+            </button>
+
             <form action="/LINK ZUR LOBBY">
 
                 {/* Username eingeben */}
@@ -19,7 +27,7 @@ function SpielBeitreten() {
                 <input type="text" id="Passwort" name="Passwort"></input>
                 <br></br>
                 <br></br>
-                
+
                 {/* Lobby beitreten */}
                 <input type="submit" value="Spiel Beitreten"></input>
             </form>

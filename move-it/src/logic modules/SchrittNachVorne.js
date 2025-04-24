@@ -1,17 +1,14 @@
-// import Startseite from "./HtmlElemente.js"
-// import MultiplayerSelect from "./HtmlElemente.js"
-// import SpielBeitreten from "./HtmlElemente.js"
-// import SpielErstellen from "./HtmlElemente.js"
-
 function SchrittNachVorne(event) {
     // finde den gedrückten Button & dadurch die aktuelle Seite
+    // sowie die ID für die nächste Seite
     const Button = event.target
     const AktuelleSeite = Button.closest(".Seite")
+    const NextPageId = Button.getAttribute("NextPageId")
 
-    // Wenn es eine Aktuelle Seite gibt, blende sie aus
-    if (AktuelleSeite) {
+    // Wenn es eine Aktuelle Seite && eine ID für die nächste gibt, blende die aktuelle aus
+    if (AktuelleSeite && NextPageId) {
         AktuelleSeite.style.display = "none"
-        const NaechsteSeite = AktuelleSeite.nextElementSibling
+        const NaechsteSeite = document.getElementById(NextPageId)
 
         //wenn es eine nächste Seite gibt blende sie ein
         if (NaechsteSeite && NaechsteSeite.classList.contains("Seite")) {
