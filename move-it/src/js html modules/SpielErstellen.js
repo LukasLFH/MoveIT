@@ -2,15 +2,17 @@ import "../css modules/InputFelder.css"
 
 function SpielErstellen() {
     return (
-        <div className="InputForm">
+        <div id="SpielErstellen" className="InputForm Seite" style={{ display: "none" }}>
             <button className="ZurueckButton">Zurück</button>
             <form action="/LINK ZUR LOBBY">
+
                 {/* Username eingeben */}
-                <label for="Username">Username:</label>
+                <label for="Nutzername">Username:</label>
                 <br></br>
-                <input type="text" id="Username" name="Username"></input>
+                <input type="text" id="Nutzername" name="Nutzername"></input>
                 <br></br>
                 <br></br>
+
                 {/* Max Anzahl von Spieler auswählern
                     - muss später noch implementiert werden */}
                 <label for="MaxNumber">Max. Anzahl von Spielern</label>
@@ -25,6 +27,7 @@ function SpielErstellen() {
                 </select>
                 <br></br>
                 <br></br>
+                
                 {/* Lobby erstellen */}
                 <input type="submit" value="Spiel erstellen"></input>
             </form>
