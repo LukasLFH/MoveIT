@@ -30,6 +30,7 @@ Die Arbeit mit den 3 Arten von branches werden durch das mergen verbunden. Genau
 https://www.atlassian.com/git/tutorials/using-branches/git-merge
 
 Bitte beachten: 
+
     - Direkte merges sind NUR von featur-branch zu prod-branch erlaubt, da bei direktem merge auf die main-branch der Server
       unterbrochen werden kann
     - Ein merge von prod auf die main-branch sollte nur erfolgen, wenn sich genug Änderungen angehäuft haben
