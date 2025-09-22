@@ -21,8 +21,13 @@ GitHub ist ein Programm zur Versionierung von Dateien. Um den sicheren Umgang mi
     3. feature:
         - Dies sind temporäre branches, welche vom Programmierer erstellt werden, wenn größere Änderungen bzw. Neuerungen am Code
           vorgenommen werden 
+        - Die feature-branches werden nach merge in prod gelöscht
         - Schema der Benennung: feature-WasWirdProgrammiert
-        - Die feature-branches werden nach merge in prod gelöscht 
+
+    4. bug:
+        - Die bug-branches funktionieren wie die feature-branches
+        - werden erstellt, wenn es einen bug gibt, welcher behoben werden soll
+        - Schema der Benennung: bug-DasIstDasProblem
 
 ### Merging
 
