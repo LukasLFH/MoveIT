@@ -167,7 +167,7 @@ const sendMessage = () => {
 
 // Platzhalter: Spiel starten
 const startGame = () => {
-    // Spiel starten Logik (noch nicht implementiert)
+    // Custom Spiel starten Logik (noch nicht implementiert)
 }
 
 // Platzhalter: Lobby verlassen
