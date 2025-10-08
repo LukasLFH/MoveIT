@@ -1,8 +1,9 @@
 @font-face {
-    font-family: 'americankestrallaser';
+    font-family: 'americankestrallaser'; /* Custom font für Überschrift */
     src: url('../pages//americankestrallaser.ttf');
 }
 
+/* Standartisiert den Inhalt auf der Seite */
 html,
 body {
     margin: 0;
@@ -13,11 +14,11 @@ body {
     overflow: hidden;
 }
 
+/* Anordnen von Elementen */
 body {
     background-image: url('../img/hintergrund.png');
     background-size: cover;
     background-position: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -169,6 +170,9 @@ body {
     background: #e64a19;
 }
 
+/* Beide keyframes: Animation für die Überschrift
+ * Nur beim laden / neuladen der Seite
+ */
 @keyframes fadeIn {
     from {
         opacity: 0;

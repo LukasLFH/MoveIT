@@ -1,10 +1,11 @@
 @font-face {
-    font-family: 'americankestrallaser';
+    font-family: 'americankestrallaser'; /* Custom Font für die Überschrift */
     src: url('../pages//americankestrallaser.ttf');
 }
 
+/* Standartisiert den Inhalt auf der Seite */
 html,
-body {
+body { 
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -13,7 +14,8 @@ body {
     overflow: hidden;
 }
 
-body {
+/* Anordnen von Elementen */
+body { 
     background-image: url('../img/hintergrund.png');
     background-size: cover;
     background-position: center;
@@ -111,7 +113,7 @@ body {
     animation: slideUp 0.8s ease;
 }
 
-.popup input,
+.popup input, /* Eingabefelder beim Popup */
 .popup input[type="range"] {
     width: 100%;
     padding: 10px;
@@ -133,6 +135,9 @@ body {
     background-color: #e4681a;
 }
 
+/* Beide keyframes: Animation für die Überschrift
+ * Nur beim laden / neuladen der Seite
+ */
 @keyframes fadeIn {
     from {
         opacity: 0;

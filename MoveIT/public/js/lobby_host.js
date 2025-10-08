@@ -1,23 +1,27 @@
+// Zeigt eine Fehlermeldung im Chat an
 const errorReport = (title, msg, chat, container) => {
     chat.innerHTML += `<p class='error-report'>${msg}</p>`;
-    chat.scrollTop = chat.scrollHeight;
+    chat.scrollTop = chat.scrollHeight; // Scrollt automatisch nach unten
 }
 
+// Zeigt eine Aktionsmeldung im Chat an (z. B. „Lobby erstellt“)
 const actionReport = (title, msg, chat, container) => {
     chat.innerHTML += `<p class='action-report'>${msg}</p>`;
     chat.scrollTop = chat.scrollHeight;
 }
 
+// Zeigt eine normale Chatnachricht mit Absendernamen
 const chatMessage = (title, msg, chat, container) => {
     chat.innerHTML += `<p class='chat-message'><span class='chat-title'>${title}:</span>${msg}</p>`;
     chat.scrollTop = chat.scrollHeight;
 }
 
+// Zeigt alle Spieler in der Lobby an
 const viewPeople = (people_, container) => {
     let i = 0;
-    container.innerHTML = "";
+    container.innerHTML = ""; // Liste leeren
     people_.forEach(person => {
-        console.log(person)
+        console.log(person); // Debug-Ausgabe
         container.innerHTML += `<div class='player' id='i${person}'>
                         Spieler ${i + 1}
                         <button class='remove-btn' onclick='removePlayer(this, false)'>Entfernen</button>
@@ -26,7 +30,9 @@ const viewPeople = (people_, container) => {
     })
 }
 
+
 window.onload = async () => {
+    // Referenzen auf HTML-Elemente holen
     let createLobby = document.getElementById("create_lobby");
     let ready = document.getElementById("ready");
     let lobbyCode = document.getElementById("lobby_code");
@@ -39,26 +45,29 @@ window.onload = async () => {
     let msgBody = document.getElementById("chatInput");
     let msgCon = document.getElementById("chatMessages");
 
+    // Nachricht senden
     send.onclick = () => {
         msgBody.value ?
-            $$$.all("msg", { id, msg: msgBody.value })
-            : "";
-        msgBody.value = "";
+            $$$.all("msg", { id, msg: msgBody.value }) :
+            "";
+        msgBody.value = ""; // Eingabefeld leeren
     }
 
+    // Zufällige Spieler-ID generieren
     let id = Math.floor(Math.random() * 100);
     console.log("ID is", id);
 
+    // Spieler abrufen
     getPeople.onclick = async () => {
         try {
             let a = await $$$.people(id);
             console.log(a);
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err);
         }
     }
 
+    // Lobby beitreten
     joinLobby.onclick = async () => {
         try {
             let code = lobbyCode.value;
@@ -67,95 +76,102 @@ window.onload = async () => {
             codeView.innerHTML = code;
             let people = await $$$.people(id);
             viewPeople(people, peopleCon);
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err)
             errorReport("", err.msg, msgCon);
         }
     }
 
+    // Spieler als „bereit“ markieren
     ready.onclick = async () => {
         try {
             let a = await $$$.join(id);
             actionReport("", a, msgCon);
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err);
             errorReport("", err.msg, msgCon);
         }
     }
 
+    // Neue Lobby erstellen
     createLobby.onclick = async () => {
         try {
             let a = await $$$.create(id);
             actionReport("", "Lobby code is: " + a.code, msgCon);
             codeView.innerHTML = a.code;
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err)
             errorReport("", err.msg, msgCon);
         }
     }
 
+    // Lobby verlassen
     leaveLobby.onclick = async () => {
         try {
             let a = await $$$.leave(id);
             actionReport("", "You have left the lobby " + a.code, msgCon);
             codeView.innerHTML = "---";
             peopleCon.innerHTML = "";
-            window.location.href = "/"
-        }
-        catch (err) {
+            window.location.href = "/"; // Zurück zur Startseite
+        } catch (err) {
             console.log(err)
             errorReport("", err.msg, msgCon);
         }
     }
 
+    // Socket-Event: neuer Spieler tritt bei
     $$$.socket.on("new_entry", (data) => {
         actionReport("", data.msg, msgCon);
         document.getElementById("playerList").innerHTML += `
-                    <div class='player' id='i${data.id}'>
-                        Spieler ${data.index + 1}
-                        <button class='remove-btn' onclick='removePlayer(this, false)'>Entfernen</button>
-                    </div>
-                `;
+            <div class='player' id='i${data.id}'>
+                Spieler ${data.index + 1}
+                <button class='remove-btn' onclick='removePlayer(this, false)'>Entfernen</button>
+            </div>
+        `;
     });
 
+    // Socket-Event: Spieler verlässt Lobby
     $$$.socket.on("left", (data) => {
         actionReport("", data.msg, msgCon);
         document.getElementById("i" + data.id).remove();
     });
 
+    // Socket-Event: neue Chatnachricht
     $$$.socket.on("msg", (data) => {
         chatMessage(data.id, data.msg, msgCon);
     });
 
-    // Automatisch die Buttons drücken
+    // Automatisch „bereit“ klicken und Lobby erstellen
     ready.click();
     await new Promise(resolve => setTimeout(resolve, 1000)); // 1 Sekunde warten
     createLobby.click();
 }
 
+// Spieler aus der Liste entfernen
 const removePlayer = (button, isHost) => {
     let playerDiv = button.parentElement;
     playerDiv.remove();
     if (isHost) {
-        // Host spezifische Logik
+        // Zusätzliche Logik für Host (noch nicht implementiert)
     }
 }
 
+// Alternative Funktion zum Nachrichtensenden
 const sendMessage = () => {
     let msgBody = document.getElementById("chatInput");
     msgBody.value ?
-        $$$.all("msg", { id, msg: msgBody.value })
-        : "";
+        $$$.all("msg", { id, msg: msgBody.value }) :
+        "";
     msgBody.value = "";
 }
 
+// Platzhalter: Spiel starten
 const startGame = () => {
-    // Spiel starten Logik
+    // Custom Spiel starten Logik (noch nicht implementiert)
 }
 
+// Platzhalter: Lobby verlassen
 const leaveLobby = () => {
-    // Lobby verlassen Logik
+    // Custom Lobby verlassen Logik (noch nicht implementiert)
 }
+
